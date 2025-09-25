@@ -1,0 +1,43 @@
+body{
+	font-family: arial;
+	text-align: center;
+	background-color: #F0F8FF;
+}
+
+.navbar{
+	align-items:center;
+	padding:15px 40px;
+	background: rgba(0,0,0,0.6);
+}
+
+.nav2 {
+	display: flex;
+	justify-content:space-between;
+}
+
+.navbar .logo{
+	color: #fff;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.navbar nav{
+	display: flex;
+	gap:20px;
+}
+
+.navbar nav a{
+	color: #fff;
+	text-decoration:none;
+	font-weight:500;
+}
+
+.navbar nav a:hover{
+	text-decoration:underline;
+}
+
+.login-container{
+	size:100px ;
+}
+
+
