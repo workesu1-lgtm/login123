@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Student Registration</title>
+
+</head>
+<body>
+
+<h2>Student Registration</h2>
+
+<form id="studentForm">
+  <label>First Name :
+    <input type="text" id="Fname" 
+  </label><br></br>
+
+  <label>Last Name :
+    <input type="text" id="Lname" 
+  </label><br></br>
+
+  <label>DOB :
+    <input type="text" id="DOB" 
+  </label><br></br>
+
+  <label>NIC :
+    <input type="text" id="NIC" 
+  </label><br></br>
+
+  <label>Email
+    <input type="email" id="email" 
+  </label><br></br>
+
+  <button type="submit">Submit</button>
+</form>
+
+<div id="final"></div>
+
+<script>
+function getValues(){
+return {
+Fname: document.getElementById('Fname').value.trim(),
+Lname: document.getElementById('Lname').value.trim(),
+DOB:   document.getElementById('DOB').value.trim(),
+NIC:   document.getElementById('NIC').value.trim(),
+email: document.getElementById('email').value.trim()
+    };
+  }
+
+
+function printName(data){
+document.getElementById('final').innerHTML =
+'<strong>Full Details</strong><br>' +
+'First name: ' + data.Fname + '<br>' +
+'Last name: '  + data.Lname  + '<br>' +
+'DOB: '        + data.DOB    + '<br>' +
+'NIC: '        + data.NIC    + '<br>' +
+'Email: '      + data.email;
+  }
+
+  function check(event){
+  
+if (event) event.preventDefault();
+
+const data = getValues();
+
+if (!data.Fname) {
+alert('First Name is empty!');
+document.getElementById('Fname').focus();
+return false;
+} else if (!data.Lname) {
+alert('Last Name is empty!');
+document.getElementById('Lname').focus();
+return false;
+} else if (!data.DOB) {
+alert('DOB is empty!');
+document.getElementById('DOB').focus();
+return false;
+} else if (!data.NIC) {
+alert('NIC is empty!');
+      document.getElementById('NIC').focus();
+return false;
+} else if (!data.email) {
+ alert('Email is empty!');
+      document.getElementById('email').focus();
+return false;
+    }
+
+printName(data);
+alert('Form submitted (locally) — all fields filled!');
+return false; 
+  }
+
+  document.getElementById('studentForm').addEventListener('submit', check);
+</script>
+
+</body>
+</html>
